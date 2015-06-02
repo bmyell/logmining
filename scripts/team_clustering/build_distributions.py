@@ -7,6 +7,13 @@ sys.path.append("../../lib")
 import file_manager as fm
 import math
 
+def distance(a, b):
+    distance = math.sqrt(\
+                math.pow((b[3] - a[3]), 2) + \
+                math.pow((b[4] - a[4]), 2))
+
+    return distance
+
 if (len(sys.argv) == 3):
     if not os.path.exists(sys.argv[2]):
         os.makedirs(sys.argv[2])
@@ -29,12 +36,10 @@ if (len(sys.argv) == 3):
         distribution_team1 = []
         i = 1
         while i < len(kick_team1):
-            distance = math.sqrt(\
-                       math.pow((kick_team1[i][3] - kick_team1[i - 1][3]), 2) +\
-                       math.pow((kick_team1[i][4] - kick_team1[i - 1][4]), 2))
-            distribution_team1.append(str(kick_team1[i][3]) + " " + \
-                                      str(kick_team1[i][4]) + " " + \
-                                      str(distance))
+            d = distance(kick_team1[i - 1], kick_team1[i])
+            distribution_team1.append(str(d) + " " + \
+                                      str(kick_team1[i][3]) + " " + \
+                                      str(kick_team1[i][4]))
             i = i + 1
         #Saving distribution into a file corresponding to the team
         save_file = open(sys.argv[2] + "distributions/" + team1, "a")
@@ -49,12 +54,10 @@ if (len(sys.argv) == 3):
         distribution_team2 = []
         i = 1
         while i < len(kick_team2):
-            distance = math.sqrt(\
-                       math.pow((kick_team2[i][3] - kick_team2[i - 1][3]), 2) +\
-                       math.pow((kick_team2[i][4] - kick_team2[i - 1][4]), 2))
-            distribution_team2.append(str(kick_team2[i][3]) + " " + \
-                                      str(kick_team2[i][4]) + " " + \
-                                      str(distance))
+            d = distance(kick_team2[i - 1], kick_team2[i])
+            distribution_team2.append(str(d) + " " + \
+                                      str(kick_team1[i][3]) + " " + \
+                                      str(kick_team1[i][4]))
             i = i + 1
         #Saving distribution into a file corresponding to the team
         save_file = open(sys.argv[2] + "distributions/" + team2, "a")
