@@ -155,6 +155,8 @@ def get_success_kick_chains(kick_chains):
 	return success_kick_chains
 
 def get_corner_kicks_chains(kick_data, corner_kick):
+	"""Returns kick chains from corner kick"""
+
 	corner_kicks_chains = []
 	tmp = []
 	i = 0
@@ -176,7 +178,7 @@ def get_corner_kicks_chains(kick_data, corner_kick):
 	return corner_kicks_chains
 
 def get_success_corner_kicks(corner_kicks_chains):
-	"""Returns success kick chains from kick data"""
+	"""Returns success kick chains from corner kicks"""
 
 	success_corner_kicks = list()
 
