@@ -183,8 +183,6 @@ def get_success_corner_kicks(corner_kicks_chains):
 	success_corner_kicks = list()
 
 	for elt in corner_kicks_chains:
-		if elt[0][1] == "HELIOS2014":
-			print elt
 		#If the last kick of current chain is in penalty area
 		if (elt[len(elt) - 1][3] >= 36 and elt[len(elt) - 1][3] <= 52.5) or \
 		(elt[len(elt) - 1][3] <= -36 and elt[len(elt) - 1][3] >= -52.5):

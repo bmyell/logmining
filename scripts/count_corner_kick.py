@@ -16,14 +16,17 @@ if (len(sys.argv) == 2):
         rcg = fm.read_file(file[0])
         rcl = fm.read_file(file[1])
 
+        #Getting data
         teams = fm.find_teams(rcg)
         ball_data = fm.get_ball_data(rcg)
         corner_kicks = fm.get_corner_kicks(rcl, ball_data, teams)
         kick_data = fm.get_kick_data(rcl, ball_data)
         corner_kicks_chains = fm.get_corner_kicks_chains(kick_data, corner_kicks)
         success_corner_kicks = fm.get_success_corner_kicks(corner_kicks_chains)
-        dv.plot_kick_chains(success_corner_kicks, teams, "")
 
+        #dv.plot_kick_chains(success_corner_kicks, teams, "")
+
+        #Separates data from team1 and team2
         team1_corner_kicks = []
         team2_corner_kicks = []
         team1_success_corner_kicks = []
@@ -55,10 +58,12 @@ if (len(sys.argv) == 2):
         total_s_2 = total_s_2 + len(team2_success_corner_kicks)
 
     print teams[0] + ": " + str(total_1) + " corner kicks " + "(" +\
-          str(total_s_1) + " success) "  "within " +\
+          str(total_s_1) + " success, " + \
+          str(float(total_s_1 * 100) / float(total_1)) + "%) within " +\
           str(len(file_list)) + " matches."
     print teams[1] + ": " + str(total_2) + " corner kicks " + "(" +\
-          str(total_s_2) + " success) "  "within " +\
+          str(total_s_2) + " success, " + \
+          str(float(total_s_2 * 100) / float(total_2)) + "%) within " +\
           str(len(file_list)) + " matches."
 else:
     print "Argv error. Please type:"
