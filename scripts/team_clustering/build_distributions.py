@@ -56,8 +56,8 @@ if (len(sys.argv) == 3):
         while i < len(kick_team2):
             d = distance(kick_team2[i - 1], kick_team2[i])
             distribution_team2.append(str(d) + " " + \
-                                      str(kick_team1[i][3]) + " " + \
-                                      str(kick_team1[i][4]))
+                                      str(kick_team2[i][3]) + " " + \
+                                      str(kick_team2[i][4]))
             i = i + 1
         #Saving distribution into a file corresponding to the team
         save_file = open(sys.argv[2] + "distributions/" + team2, "a")

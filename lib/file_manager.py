@@ -9,7 +9,7 @@ import os
 
 def walking_tree(path):
 	"""Walks the given path and returns a list of all logs' path"""
-	
+
 	file_list = []
 
 	for root, subFolders, files in os.walk(path):
@@ -154,10 +154,45 @@ def get_success_kick_chains(kick_chains):
 
 	return success_kick_chains
 
+def get_corner_kicks_chains(kick_data, corner_kick):
+	corner_kicks_chains = []
+	tmp = []
+	i = 0
+
+	for ck in corner_kick:
+		while i < len(kick_data):
+			if kick_data[i][0] >= ck[0]:
+				if kick_data[i][1] == ck[1]:
+					for j in range(i, len(kick_data)):
+						if kick_data[j][1] != ck[1]:
+							break
+						else:
+							tmp.append(kick_data[j])
+					corner_kicks_chains.append(tmp)
+					tmp = []
+					break
+			i = i + 1
+
+	return corner_kicks_chains
+
+def get_success_corner_kicks(corner_kicks_chains):
+	"""Returns success kick chains from kick data"""
+
+	success_corner_kicks = list()
+
+	for elt in corner_kicks_chains:
+		#If the last kick of current chain is in penalty area
+		if (elt[len(elt) - 1][3] >= 36 and elt[len(elt) - 1][3] <= 52.5) or \
+		(elt[len(elt) - 1][3] >= -36 and elt[len(elt) - 1][3] <= -52.5):
+			if elt[len(elt) - 1][4] >= -20 and elt[len(elt) - 1][4] <= 20:
+				success_corner_kicks.append(elt)
+
+	return success_corner_kicks
+
 def get_faults(rcl, ball_data, teams):
 	"""Returns faults"""
 
-	fault_expr = "\(referee foul_charge_*"
+	fault_expr = "\(referee foul_charge_[r|l]"
 	cycle_expr = "^[0-9]*"
 	faults = list()
 	flag = False
@@ -190,7 +225,7 @@ def get_faults(rcl, ball_data, teams):
 def get_offsides(rcl, ball_data, teams):
 	"""Returns offsides"""
 
-	offside_expr = "\(referee offside_"
+	offside_expr = "\(referee offside_[r|l]"
 	cycle_expr = "^[0-9]*"
 	offsides = list()
 	flag = False
@@ -223,7 +258,7 @@ def get_offsides(rcl, ball_data, teams):
 def get_corner_kicks(rcl, ball_data, teams):
 	"""Returns corners"""
 
-	corner_expr = "\(referee corner_kick_"
+	corner_expr = "\(referee corner_kick_[r|l]"
 	cycle_expr = "^[0-9]*"
 	corner_kicks = list()
 	flag = False
@@ -235,7 +270,7 @@ def get_corner_kicks(rcl, ball_data, teams):
 			tmp = tmp.split(" ")
 			cycle = re.search(cycle_expr, elt).group()
 			team_corner = tmp[1].split("_")
-			if(team_corner[2] == "r"):
+			if team_corner[2] == "r":
 				team_corner = teams[1]
 			else:
 				team_corner = teams[0]
@@ -256,7 +291,7 @@ def get_corner_kicks(rcl, ball_data, teams):
 def get_kick_in(rcl, ball_data, teams):
 	"""Returns kick in"""
 
-	kick_in_expr = "\(referee kick_in_"
+	kick_in_expr = "\(referee kick_in_[r|l]"
 	cycle_expr = "^[0-9]*"
 	kick_in = list()
 	flag = False
@@ -289,7 +324,7 @@ def get_kick_in(rcl, ball_data, teams):
 def get_goal_kicks(rcl, ball_data, teams):
 	"""Returns goal kicks"""
 
-	goal_kick_expr = "\(referee goal_kick_"
+	goal_kick_expr = "\(referee goal_kick_[r|l]"
 	cycle_expr = "^[0-9]*"
 	goal_kicks = list()
 	flag = False

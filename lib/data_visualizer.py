@@ -116,8 +116,8 @@ def plot_kick_chains(kick_chains, teams, path):
             color_legend()
             plt.text(elt[0][3], -elt[0][4], elt[0][0])
             plt.text(-10, 36, teams[0])
-            if path != "":
-                plt.savefig("save/" + path + teams[0] + "_kick_actions_" + str(i) + ".png", dpi = 200)
+            #if path != "":
+                #plt.savefig("save/" + path + teams[0] + "_kick_actions_" + str(i) + ".png", dpi = 200)
 
             i = i + 1
             plt.show()
@@ -138,8 +138,8 @@ def plot_kick_chains(kick_chains, teams, path):
             color_legend()
             plt.text(elt[0][3], -elt[0][4], elt[0][0])
             plt.text(-10, 36, teams[1])
-            if path != "":
-                plt.savefig("save/" + path + teams[1] + "_kick_actions_" + str(j) + ".png", dpi = 200)
+            #if path != "":
+                #plt.savefig("save/" + path + teams[1] + "_kick_actions_" + str(j) + ".png", dpi = 200)
 
             j = j + 1
             plt.show()
