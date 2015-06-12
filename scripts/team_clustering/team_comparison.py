@@ -42,8 +42,11 @@ if (len(sys.argv) == 2):
     	for file in files:
     		file_list.append(os.path.join(root, file))
     distance_matrix = np.empty([len(file_list), len(file_list)])
+    f_label = open(sys.argv[1] + "label", "w")
     for i in range(0, len(file_list)):
         j = 0
+        label = file_list[i].split("/")
+        f_label.write(str(i) + ": " + label[2] + "\n")
         while j <= i:
             distribution_team1 = get_distribution(file_list[i])
             distribution_team2 = get_distribution(file_list[j])
@@ -58,6 +61,8 @@ if (len(sys.argv) == 2):
             distance_matrix[i][j] = emd
             distance_matrix[j][i] = emd
             j = j + 1
+    f_label.close()
+    del f_label
     print distance_matrix
     link_matrix = hac.linkage(distance_matrix, method='weighted')
     dendrogram = hac.dendrogram(link_matrix)
