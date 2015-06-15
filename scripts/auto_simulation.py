@@ -4,7 +4,11 @@ import time
 
 TEAM_L = "/home/scom/Documents/RoboCup/helios/helios/src/trainer.sh"
 OPP_LIST = ["/home/scom/Documents/RoboCup/team/rc_14/WrightEagle/start.sh",
-            "/home/scom/Documents/RoboCup/team/rc_14/Oxsy/start.sh"
+            "/home/scom/Documents/RoboCup/team/rc_14/CYRUS/startAll",
+            "/home/scom/Documents/RoboCup/team/rc_14/Gliders2014/src/start.sh",
+            "/home/scom/Documents/RoboCup/team/rc_14/InfoGraphics/Info80/src/start.sh",
+            "/home/scom/Documents/RoboCup/team/rc_14/Oxsy/start.sh",
+            "/home/scom/Documents/RoboCup/team/rc_14/Yushan2014/start.sh"
            ]
 NUM_OPP = len(OPP_LIST)
 LOG_DIRECTORY = "/home/scom/test/"
