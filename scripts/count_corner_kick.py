@@ -57,14 +57,22 @@ if (len(sys.argv) == 2):
         total_s_1 = total_s_1 + len(team1_success_corner_kicks)
         total_s_2 = total_s_2 + len(team2_success_corner_kicks)
 
-    print teams[0] + ": " + str(total_1) + " corner kicks " + "(" +\
-          str(total_s_1) + " success, " + \
-          str(float(total_s_1 * 100) / float(total_1)) + "%) within " +\
-          str(len(file_list)) + " matches."
-    print teams[1] + ": " + str(total_2) + " corner kicks " + "(" +\
-          str(total_s_2) + " success, " + \
-          str(float(total_s_2 * 100) / float(total_2)) + "%) within " +\
-          str(len(file_list)) + " matches."
+    if total_1 != 0:
+        print teams[0] + ": " + str(total_1) + " corner kicks " + "(" +\
+              str(total_s_1) + " success, " + \
+              str(float(total_s_1 * 100) / float(total_1)) + "%) within " +\
+              str(len(file_list)) + " matches."
+    else:
+        print teams[0] + ": 0 corner kicks within " +\
+              str(len(file_list)) + " matches."
+    if total_2 != 0:
+        print teams[1] + ": " + str(total_2) + " corner kicks " + "(" +\
+              str(total_s_2) + " success, " + \
+              str(float(total_s_2 * 100) / float(total_2)) + "%) within " +\
+              str(len(file_list)) + " matches."
+    else:
+        print teams[1] + ": 0 corner kicks within " +\
+              str(len(file_list)) + " matches."
 else:
     print "Argv error. Please type:"
     print "python count_corner_kick.py log_path"
