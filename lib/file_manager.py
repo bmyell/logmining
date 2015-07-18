@@ -14,7 +14,7 @@ def walking_tree(path):
 
 	for root, subFolders, files in os.walk(path):
 		for file in files:
-			if file[len(file) - 4:] == ".rcg":
+			if file[len(file) - 4:] == ".rcg" and file != "incomplete.rcg":
 				rcl = os.path.join(root, file[: -3] + "rcl")
 				file_list.append((os.path.join(root, file), rcl))
 	return file_list
