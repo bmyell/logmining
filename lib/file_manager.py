@@ -80,6 +80,11 @@ def get_kick_data(rcl, ball_data):
 			tmp = re.search(kick_data_expr, elt).group()
 			tmp = tmp.split(" ")
 			agent = tmp[1].split("_")
+			if len(agent) != 2:
+				while len(agent) > 2:
+					agent[0] += "_" + agent[1]
+					del agent[1]
+					print(agent)
 			kick_data.append([int(tmp_cycle), agent[0], int(agent[1][:-1]),\
 			float(tmp[3]), float(tmp[4])]) #cycle, team, n°player, ?, ?
 	for elt in kick_data:
