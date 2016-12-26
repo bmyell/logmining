@@ -1,2 +1,0 @@
-# logmining
-Robocup2DLogMining
