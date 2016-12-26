@@ -145,7 +145,7 @@ def get_kick_chains(kick_data):
 
 	return kick_chains
 
-def get_success_kick_chains(kick_chains):
+def get_success_kick_chains(kick_chains,corner_kicks):
 	"""Returns success kick chains from kick data"""
 
 	success_kick_chains = list()

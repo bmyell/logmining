@@ -52,7 +52,7 @@ corner_kicks = fm.get_corner_kicks(rcl, ball_data, teams)
 #print teams[0] + " : " + str(ball_possession[0]) + "%"
 #print teams[1] + " : " + str(ball_possession[1]) + "%"
 
-success_corner_kicks = fm.get_success_corner_kicks(success_kick_chains)
+success_corner_kicks = fm.get_success_corner_kicks(success_kick_chains.corner_kicks)
 #print success_corner_kicks
 
 #if os.path.isdir("save/" + path) is False:
