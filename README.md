@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # RoboCup2DSimulation
 Some works on RoboCup 2D Simulation
 
@@ -10,3 +11,7 @@ Some works on RoboCup 2D Simulation
 *   count_corner_kick: Count the number of corner kick (and success corner kick + plot them) for a given set of games
 *   count_offside: Count the number of offside for a given set of games
 *   auto_simulation: Runs a certain number of games for a given team against a randomly pick opponent team (in a set of opponent teams)
+=======
+# logmining
+Robocup2DLogMining
+>>>>>>> b7079106411287723b429213a25ff62181271397
