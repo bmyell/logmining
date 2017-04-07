@@ -3,17 +3,23 @@
 
 import re  # Regular Expression
 import os
-
+import glob
 # need sort
+
+
 def get_file_in_dir(dir):
     filelist = []
     filenames = os.listdir(dir)
+    # filenames = glob.glob(dir)
     for fn in filenames:
         filelist.append(fn)
+    if(len(filelist) > 0):
+        filelist.sort()
     fo = open("list.txt", 'wb')
     for j in filelist:
-        fo.write(str(j))
-        fo.write('\n')
+        if '.rcl' not in j:  # not surpport re...
+            fo.write(str(j))
+            fo.write('\n')
     fo.close()
 
 
@@ -25,7 +31,6 @@ def get_infor_of_on_line(line):
 
     team_patten = re.compile('[a-zA-Z]+\_[a-zA-Z]+')
     num_patten = re.compile('[0-9]+')
-
     t_l = re.search(team_patten, team_l).group()
     t_r = re.search(team_patten, team_r).group()
     score_l = re.search(num_patten, team_l).group()
