@@ -1,0 +1,111 @@
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+LOG_DIRECTORY	auto_simulation.py	/^LOG_DIRECTORY = "\/home\/rider\/Desktop\/Q_test\/logs" #logs path$/;"	v
+NUM_OPP	auto_simulation.py	/^NUM_OPP = len(OPP_LIST)$/;"	v
+NUM_SIM	auto_simulation.py	/^NUM_SIM = 5$/;"	v
+OPP_LIST	auto_simulation.py	/^OPP_LIST = ["\/home\/rider\/Desktop\/Q_test\/base\/src\/start.sh" #team_r_start.sh path$/;"	v
+TEAM_L	auto_simulation.py	/^TEAM_L = "\/home\/rider\/Desktop\/Q_test\/Q\/src\/start.sh"     #team_L_start.sh path$/;"	v
+TEAM_R	auto_simulation.py	/^    TEAM_R = OPP_LIST[random_opp]$/;"	v
+p	auto_simulation.py	/^    p = subprocess.Popen([$/;"	v
+random_opp	auto_simulation.py	/^    random_opp = random.randint(0, NUM_OPP - 1)$/;"	v
+ball_data	ball_trajectory.py	/^    ball_data = fm.get_ball_data(rcg)$/;"	v
+file_list	ball_trajectory.py	/^        file_list = fm.walking_tree(sys.argv[1])$/;"	v
+path	ball_trajectory.py	/^            path = sys.argv[2]$/;"	v
+path	ball_trajectory.py	/^        path = sys.argv[3]$/;"	v
+rcg	ball_trajectory.py	/^            rcg = fm.read_file(file[0])$/;"	v
+rcg	ball_trajectory.py	/^            rcg = fm.read_file(sys.argv[1])$/;"	v
+rcg	ball_trajectory.py	/^            rcg = fm.read_file(sys.argv[2])$/;"	v
+rcl	ball_trajectory.py	/^            rcl = fm.read_file(file[1])$/;"	v
+rcl	ball_trajectory.py	/^            rcl = fm.read_file(sys.argv[1])$/;"	v
+rcl	ball_trajectory.py	/^            rcl = fm.read_file(sys.argv[2])$/;"	v
+teams	ball_trajectory.py	/^    teams = fm.find_teams(rcg)$/;"	v
+ball_data	count_corner_kick.py	/^        ball_data = fm.get_ball_data(rcg)$/;"	v
+corner_kicks	count_corner_kick.py	/^        corner_kicks = fm.get_corner_kicks(rcl, ball_data, teams)$/;"	v
+corner_kicks_chains	count_corner_kick.py	/^        corner_kicks_chains = fm.get_corner_kicks_chains(kick_data, corner_kicks)$/;"	v
+file_list	count_corner_kick.py	/^    file_list = fm.walking_tree(sys.argv[1])$/;"	v
+kick_data	count_corner_kick.py	/^        kick_data = fm.get_kick_data(rcl, ball_data)$/;"	v
+rcg	count_corner_kick.py	/^        rcg = fm.read_file(file[0])$/;"	v
+rcl	count_corner_kick.py	/^        rcl = fm.read_file(file[1])$/;"	v
+success_corner_kicks	count_corner_kick.py	/^        success_corner_kicks = fm.get_success_corner_kicks(corner_kicks_chains)$/;"	v
+team1_corner_kicks	count_corner_kick.py	/^        team1_corner_kicks = []$/;"	v
+team1_success_corner_kicks	count_corner_kick.py	/^        team1_success_corner_kicks = []$/;"	v
+team2_corner_kicks	count_corner_kick.py	/^        team2_corner_kicks = []$/;"	v
+team2_success_corner_kicks	count_corner_kick.py	/^        team2_success_corner_kicks = []$/;"	v
+teams	count_corner_kick.py	/^        teams = fm.find_teams(rcg)$/;"	v
+total_1	count_corner_kick.py	/^        total_1 = total_1 + len(team1_corner_kicks)$/;"	v
+total_1	count_corner_kick.py	/^    total_1 = 0$/;"	v
+total_2	count_corner_kick.py	/^        total_2 = total_2 + len(team2_corner_kicks)$/;"	v
+total_2	count_corner_kick.py	/^    total_2 = 0$/;"	v
+total_s_1	count_corner_kick.py	/^        total_s_1 = total_s_1 + len(team1_success_corner_kicks)$/;"	v
+total_s_1	count_corner_kick.py	/^    total_s_1 = 0$/;"	v
+total_s_2	count_corner_kick.py	/^        total_s_2 = total_s_2 + len(team2_success_corner_kicks)$/;"	v
+total_s_2	count_corner_kick.py	/^    total_s_2 = 0$/;"	v
+ball_data	count_offside.py	/^        ball_data = fm.get_ball_data(rcg)$/;"	v
+file_list	count_offside.py	/^    file_list = fm.walking_tree(sys.argv[1])$/;"	v
+offsides	count_offside.py	/^        offsides = fm.get_offsides(rcl, ball_data, teams)$/;"	v
+rcg	count_offside.py	/^        rcg = fm.read_file(file[0])$/;"	v
+rcl	count_offside.py	/^        rcl = fm.read_file(file[1])$/;"	v
+team1_offsides	count_offside.py	/^        team1_offsides = []$/;"	v
+team2_offsides	count_offside.py	/^        team2_offsides = []$/;"	v
+teams	count_offside.py	/^        teams = fm.find_teams(rcg)$/;"	v
+total_1	count_offside.py	/^        total_1 = total_1 + len(team1_offsides)$/;"	v
+total_1	count_offside.py	/^    total_1 = 0$/;"	v
+total_2	count_offside.py	/^        total_2 = total_2 + len(team2_offsides)$/;"	v
+total_2	count_offside.py	/^    total_2 = 0$/;"	v
+num_patten	hello.py	/^num_patten=re.compile('[0-9]+')$/;"	v
+score_l	hello.py	/^score_l=re.search(num_patten,team_l).group()$/;"	v
+score_r	hello.py	/^score_r=re.search(num_patten,team_r).group()$/;"	v
+str	hello.py	/^str="20170328215444-Q_learn_4-vs-HELIOS_base_2.rcg"$/;"	v
+str2	hello.py	/^str2=str.split('-')$/;"	v
+t_l	hello.py	/^t_l=re.search(team_patten,team_l).group()$/;"	v
+t_r	hello.py	/^t_r=re.search(team_patten,team_r).group()$/;"	v
+team_l	hello.py	/^team_l=str2[1]$/;"	v
+team_patten	hello.py	/^team_patten=re.compile('[a-zA-Z]+\\_[a-zA-Z]+')$/;"	v
+team_r	hello.py	/^team_r=str2[3].strip('.rcg')$/;"	v
+time	hello.py	/^time=str2[0]$/;"	v
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+dir	score_analysis.py	/^    dir='\/home\/rider\/Desktop\/Q_test\/logs'$/;"	v
+get_file_in_dir	score_analysis.py	/^def get_file_in_dir(dir):$/;"	f
+get_infor_of_on_line	score_analysis.py	/^def get_infor_of_on_line(line):$/;"	f
+handle_text	score_analysis.py	/^def handle_text():$/;"	f
+ball_data	team_clustering/build_distributions.py	/^        ball_data = fm.get_ball_data(rcg)$/;"	v
+d	team_clustering/build_distributions.py	/^            d = distance(kick_team1[i - 1], kick_team1[i])$/;"	v
+d	team_clustering/build_distributions.py	/^            d = distance(kick_team2[i - 1], kick_team2[i])$/;"	v
+distance	team_clustering/build_distributions.py	/^def distance(a, b):$/;"	f
+distribution_team1	team_clustering/build_distributions.py	/^        distribution_team1 = []$/;"	v
+distribution_team2	team_clustering/build_distributions.py	/^        distribution_team2 = []$/;"	v
+files_path	team_clustering/build_distributions.py	/^    files_path = fm.walking_tree(sys.argv[1])$/;"	v
+i	team_clustering/build_distributions.py	/^            i = i + 1$/;"	v
+i	team_clustering/build_distributions.py	/^        i = 1$/;"	v
+kick_team1	team_clustering/build_distributions.py	/^        kick_team1 = []$/;"	v
+kick_team2	team_clustering/build_distributions.py	/^        kick_team2 = []$/;"	v
+kicks	team_clustering/build_distributions.py	/^        kicks = fm.get_kick_data(rcl, ball_data)$/;"	v
+rcg	team_clustering/build_distributions.py	/^        rcg = fm.read_file(path[0])$/;"	v
+rcl	team_clustering/build_distributions.py	/^        rcl = fm.read_file(path[1])$/;"	v
+save_file	team_clustering/build_distributions.py	/^        save_file = open(sys.argv[2] + "distributions\/" + team1, "a")$/;"	v
+save_file	team_clustering/build_distributions.py	/^        save_file = open(sys.argv[2] + "distributions\/" + team2, "a")$/;"	v
+team1	team_clustering/build_distributions.py	/^        team1 = teams[0] + "_VS_" + teams[1]$/;"	v
+team2	team_clustering/build_distributions.py	/^        team2 = teams[1] + "_VS_" + teams[0]$/;"	v
+teams	team_clustering/build_distributions.py	/^        teams = fm.find_teams(rcg)$/;"	v
+compute_signature	team_clustering/team_comparison.py	/^def compute_signature(distribution):$/;"	f
+dendrogram	team_clustering/team_comparison.py	/^                                truncate_mode='level', show_contracted=True)$/;"	v
+dendrogram	team_clustering/team_comparison.py	/^    dendrogram = hac.dendrogram(link_matrix)$/;"	v
+distance_matrix	team_clustering/team_comparison.py	/^    distance_matrix = np.empty([len(file_list), len(file_list)])$/;"	v
+distribution_team1	team_clustering/team_comparison.py	/^            distribution_team1 = get_distribution(file_list[i])$/;"	v
+distribution_team2	team_clustering/team_comparison.py	/^            distribution_team2 = get_distribution(file_list[j])$/;"	v
+emd	team_clustering/team_comparison.py	/^            emd = cv.CalcEMD2(signature_team1, signature_team2, cv.CV_DIST_L2)$/;"	v
+f_label	team_clustering/team_comparison.py	/^    f_label = open(sys.argv[1] + "label", "w")$/;"	v
+file_list	team_clustering/team_comparison.py	/^    file_list = []$/;"	v
+fl	team_clustering/team_comparison.py	/^    fl = open(sys.argv[1] + "\/link.txt", "w")$/;"	v
+get_distribution	team_clustering/team_comparison.py	/^def get_distribution(path):$/;"	f
+j	team_clustering/team_comparison.py	/^            j = j + 1$/;"	v
+j	team_clustering/team_comparison.py	/^        j = 0$/;"	v
+l	team_clustering/team_comparison.py	/^    l = dendrogram['leaves']$/;"	v
+label	team_clustering/team_comparison.py	/^        label = file_list[i].split("\/")$/;"	v
+link	team_clustering/team_comparison.py	/^    link = link_matrix.tolist()$/;"	v
+link_matrix	team_clustering/team_comparison.py	/^    link_matrix = hac.linkage(distance_matrix, method='weighted')$/;"	v
+signature_team1	team_clustering/team_comparison.py	/^            signature_team1 = compute_signature(distribution_team1)$/;"	v
+signature_team2	team_clustering/team_comparison.py	/^            signature_team2 = compute_signature(distribution_team2)$/;"	v
