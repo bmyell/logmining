@@ -3,14 +3,13 @@
 
 import re  # Regular Expression
 import os
-import glob
 # need sort
+import pylab as pl
 
 
 def get_file_in_dir(dir):
     filelist = []
     filenames = os.listdir(dir)
-    # filenames = glob.glob(dir)
     for fn in filenames:
         filelist.append(fn)
     if(len(filelist) > 0):
@@ -35,19 +34,32 @@ def get_infor_of_on_line(line):
     t_r = re.search(team_patten, team_r).group()
     score_l = re.search(num_patten, team_l).group()
     score_r = re.search(num_patten, team_r).group()
-    print(time + " " + t_l + "   " + t_r + "   " + score_l + "   " + score_r)
+    # print(time + " " + t_l + "   " + t_r + "   " + score_l + "   " + score_r)
+    return time, t_l, t_r, score_l, score_r
 
 
 def handle_text():
     f = open("list.txt", 'r')
     line = f.readline()
+    score_set = []
     while line:
-        get_infor_of_on_line(line)
+        # get_infor_of_on_line(line)
+        score_set.append(get_infor_of_on_line(line))
         line = f.readline()
     f.close()
+    handle_set(score_set)
 
+
+def handle_set(score_set):
+    x = []
+    y = []
+    for line in score_set:
+        x.append(line[0])
+        y.append(line[3])
+    pl.plot(x, y)
+    pl.show()
 
 if __name__ == "__main__":
     dir = '/home/rider/Desktop/Q_test/logs'
     get_file_in_dir(dir)  # works
-    handle_text()  # works
+    score_set = handle_text()
