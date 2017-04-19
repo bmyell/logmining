@@ -56,6 +56,10 @@ def handle_set(score_set):
     for line in score_set:
         x.append(line[0])
         y.append(line[3])
+    # drawing--------
+    pl.title("Q_learn scores")
+    pl.ylabel("Winning probability")
+    pl.xlabel("numbers of match")
     pl.plot(x, y)
     pl.show()
 

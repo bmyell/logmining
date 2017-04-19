@@ -1,8 +1,8 @@
 import random
 import subprocess
 import time
-TEAM_L = "/home/rider/Desktop/Q_test/Q/src/start.sh"     #team_L_start.sh path
-OPP_LIST = ["/home/rider/Desktop/Q_test/base/src/start.sh" #team_r_start.sh path
+TEAM_L = "/home/rider/Desktop/base/src/start-debug.sh"     #team_L_start.sh path
+OPP_LIST = ["/home/rider/Desktop/Q_test/Q/src/start.sh" #team_r_start.sh path
            ]
 NUM_OPP = len(OPP_LIST)
 LOG_DIRECTORY = "/home/rider/Desktop/Q_test/logs" #logs path

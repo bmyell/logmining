@@ -7,8 +7,8 @@ sys.path.append("lib")
 import file_manager as fm
 import data_visualizer as dv
 
-rcg = fm.read_file("logs/20140709193255-HELIOS2014_3-vs-WrightEagle_0.rcg")
-rcl = fm.read_file("logs/20140709193255-HELIOS2014_3-vs-WrightEagle_0.rcl")
+rcg = fm.read_file("logs/20170328215302-Q_learn_4-vs-HELIOS_base_1.rcg")
+rcl = fm.read_file("logs/20170328215302-Q_learn_4-vs-HELIOS_base_1.rcl")
 path = "20140709193255-HELIOS2014_3-vs-WrightEagle_0/"
 
 teams = fm.find_teams(rcg)
